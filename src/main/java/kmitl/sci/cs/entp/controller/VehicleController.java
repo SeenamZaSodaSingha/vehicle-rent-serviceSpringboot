@@ -29,8 +29,8 @@ public class VehicleController {
     }
 
     @PostMapping("/vehicles/add")
-    public void create(@RequestBody Vehicle vehicle) {
-        vehicleService.create(vehicle);
+    public void create() {
+        vehicleService.create();
     }
 
     @PostMapping("/{vehicleId}/user/{userId}")
