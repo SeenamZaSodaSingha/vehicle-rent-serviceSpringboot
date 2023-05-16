@@ -33,7 +33,7 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public void delete(long vehicleId) {
         Vehicle vehicle = vehicleRepository.findByVehicleId(vehicleId);
-        vehicleRepository.delete(vehicle);
+        // vehicleRepository.delete(vehicle);
         vehicle.resetOwner();
         vehicle.setStatus("AVAILABLE");
         vehicle.resetAssociateDate();

@@ -2,7 +2,6 @@ package kmitl.sci.cs.entp.model;
 
 import java.util.Date;
 
-import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,7 +12,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-// import jakarta.persistence.Table;
 
 @Entity
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -26,19 +24,11 @@ public class Vehicle {
     @Column(length = 30)
     private String owner;
 
-    // @CreationTimestamp
     @JsonIgnore
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     private Date associateDate;
 
     public Vehicle() {
-        super();
-        this.status = "AVAILABLE";
-        this.owner = null;
-        this.associateDate = null;
-    }
-
-    public Vehicle(long vehicleId) {
         super();
         this.status = "AVAILABLE";
         this.owner = null;
